@@ -12,15 +12,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet"
-          href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css"
-          crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="css/main.css">
-    <link rel="stylesheet" type="text/css" href="D:/Desktop/JAVA2/KursinisWeb/web/css/main.css">
-    <link rel="stylesheet" type="text/css" href="<c:url value='/css/main.css' />"/>
-    <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/main.css" />
-
-
 </head>
 
 
