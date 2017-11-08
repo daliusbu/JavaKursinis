@@ -1,11 +1,144 @@
+html{
+   height: 100%;
+}
+
 body {
-    background-color: blue;
+    background-color:#f8fbfe;
+}
+article{
+    max-width:1000px;
+    background-color:lightgrey;
+    margin: auto;
 }
 
 label {
-    margin: 40px;
+    margin-right: 15px;
+}
+.bot_gap15{
+    margin-bottom: 15px;
+}
+.row{
+    width:100%;
+    margin-left:0;
+    padding:15px;
+}
+#btnSubmit{
+    margin:10px;
+}
+.container{
+    margin-top:30px;
 }
 
-p {
-    font-size: 20px;
+h5{
+    margin-bottom:20px;
+}
+h4.col-sm-12{
+    color:#c12e2a;
+}
+
+    .form-inline label {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: start;
+        align-items: flex-start;
+        -ms-flex-pack: start;
+        justify-content: flex-start;
+        margin-bottom: 0;
+    }
+.lft{
+    text-align: left;
+    justify-content: left;
+    justify-items: left;
+    align-items: left;
+}
+
+.rght{
+    text-align: right;
+    justify-content: right;
+    justify-items: right;
+    align-items: right;
+}
+
+.fr{
+    margin-left:auto;
+}
+
+article{
+    min-height: 320px;
+}
+
+footer{
+    height:70px;
+    background-color: #81a56d;
+    padding:20px;
+    color:lightgrey;
+}
+
+.lockedInput{
+    background-color: #a19861;
+}
+.terminal{
+    background-color:#e8e8a6;
+}
+.destination{
+    background-color:#d5c46f;
+}
+.btn-large{
+    width:100%;
+    margin: auto;
+}
+.navbar{
+    margin-bottom:0;
+    padding:15px;
+    border-bottom: 2px solid #414bb4;
+}
+
+
+/*Login page (Index.jsp)*/
+
+.pageBackground {
+    background-image: linear-gradient(lightblue, lightgreen);
+    min-height: 380px;
+    padding-bottom: 30px;
+}
+.pageBackgroundBrown {
+    background-image: linear-gradient(#ece6a8, rgba(147, 217, 108, 0.86));
+    min-height: 380px;
+    padding-bottom: 30px;
+}
+.fullWidth img{
+    width: 100%;
+    height: 150px;
+}
+
+.form-control{
+    height:34px;
+}
+.redFont{
+    color:red;
+}
+.desaturated{
+    opacity: 0.5;
+}
+.center{
+    margin:20px auto;
+}
+
+.mainTitle{
+    padding:20px 5px;
+}
+
+/*Driver colours*/
+.rowBlue1{
+    background-color:rgba(52, 136, 140, 0.43);
+}
+.rowGreen1{
+    background-color:rgba(124, 170, 45, 0.5);
+}
+.custom-select{
+    height:35px;
+}
+
+#alertSuccess{
+    display: none;
 }

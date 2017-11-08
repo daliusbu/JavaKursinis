@@ -9,27 +9,28 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet("/truckInput")
-public class TruckInput extends HttpServlet{
+@WebServlet("/truckCheck")
+public class TruckCheck extends HttpServlet{
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         resp.setContentType("text/html");
         PrintWriter out = resp.getWriter();
         String truckName = req.getParameter("tName");
-        String truckLicense = req.getParameter("tLicense");
+        String truckLicense = req.getParameter("truckLicense");
+        truckName = Validation.checkTruck(truckLicense);
 
-        if (Validation.checkTruck(truckName, truckLicense)){
-            req.setAttribute("tName", truckName);
-            req.setAttribute("tLicense", truckLicense);
-            req.getRequestDispatcher("routeForm.jsp").forward(req, resp);
+        if (truckName != null){
+            HttpSession session = req.getSession();
+            session.setAttribute("tName", truckName);
+            session.setAttribute("tLicense", truckLicense);
+            req.getRequestDispatcher("WEB-INF/routeAddForm.jsp").forward(req, resp);
         }else {
             req.setAttribute("name", "Toks sunkvezimis NEEGZISTUOJA");
-            req.getRequestDispatcher("welcome.jsp").forward(req, resp);
+            req.getRequestDispatcher("WEB-INF/welcomeDriver.jsp").forward(req, resp);
         }
-
-
     }
 }

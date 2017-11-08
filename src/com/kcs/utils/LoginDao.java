@@ -1,11 +1,16 @@
 package com.kcs.utils;
 
+import com.kcs.Objects.User;
+
 import java.sql.*;
 
 public class LoginDao {
 
-    public static int validate(String name, String pass){
-        int userId = 0;
+    public static User validate(String name, String pass){
+        int userId;
+        String userRole;
+        User user = new User();
+
         try {
             Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/vaztarastis",
              "root", "");
@@ -13,19 +18,20 @@ public class LoginDao {
 
             if (con != null){
                 System.out.println("Connected!");
-                PreparedStatement ps = con.prepareStatement("SELECT id FROM users WHERE name = ? AND pass = ?");
+                PreparedStatement ps = con.prepareStatement("SELECT id, role FROM users WHERE name = ? AND pass = ?");
                 ps.setString(1, name);
                 ps.setString(2, pass);
 
                 ResultSet rs = ps.executeQuery();
                 while (rs.next()){
-                    userId = rs.getInt("id");
+                    user.setId(rs.getInt("id"));
+                    user.setRole(rs.getString("role"));
                 }
             }
         } catch (SQLException e) {
             System.out.println("Shudas gaunasi su SQL prisijungimu");
         }
 
-        return userId;
+        return user;
     }
 }
