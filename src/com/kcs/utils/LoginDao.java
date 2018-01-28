@@ -31,7 +31,7 @@ public class LoginDao {
         } catch (SQLException e) {
             System.out.println("Shudas gaunasi su SQL prisijungimu");
         }
-
+	// Hello Baby!
         return user;
     }
 }
